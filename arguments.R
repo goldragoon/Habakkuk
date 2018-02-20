@@ -14,4 +14,7 @@ iterable <- function(expression){
 	}
 }
 
-
+comma_seperated2R_string <- function(comma_seperated, mode="list"){
+    type_empty <- paste(rapply(strsplit(comma_seperated, "[,]"), trimws), collapse="','")
+    return(paste(c(mode, "('", type_empty,"')"), collapse=""))
+}

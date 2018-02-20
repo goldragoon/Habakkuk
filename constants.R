@@ -1,6 +1,12 @@
 CLASSIFICATION = "classification"
 REGRESSION = "regression"
 
-ROOT_LOG_DIR = "log"
-CHILD_LOG_DIR = c("session", "plot", "feature")
+ROOT_LOG_DIR = "./"
+SESSION_DIR = "session"
+PLOT_DIR = "plot"
+FEATURE_DIR = "feature"
+METRIC_DIR = "metric"
 
+CHILD_LOG_DIR = c(SESSION_DIR, PLOT_DIR, FEATURE_DIR, METRIC_DIR)
+
+LOG_LEVELS = c("DEBUG", "INFO", "WARN", "ERROR", "FATAL")

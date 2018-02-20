@@ -17,7 +17,7 @@ funcs[[as.character(substitute(gam))]]=gam
 
 for(func in names(funcs))
 {
-	print(paste("hello?", func))
+	print(paste("Initializing", func))
 
-	assign(func, funcs$func, env=ns_preprocessing)
+	assign(func, funcs[[func]], env=ns_preprocessing)
 }

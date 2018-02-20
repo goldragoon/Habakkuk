@@ -1,0 +1,25 @@
+[ 2018-02-20 04:38:22 ] INFO examples/wine/wine.data 
+ [ 2018-02-20 04:38:22 ] INFO V1 
+ [ 2018-02-20 04:38:22 ] INFO list('V1') 
+ [ 2018-02-20 04:38:22 ] INFO omit 
+ [ 2018-02-20 04:38:22 ] INFO FALSE 
+ [ 2018-02-20 04:38:22 ] INFO 2 
+ [ 2018-02-20 04:38:22 ] INFO list('mRMR') 
+ [ 2018-02-20 04:38:22 ] INFO list('rf','RRF','kknn') 
+ [ 2018-02-20 04:38:22 ] INFO roc 
+ [ 2018-02-20 04:38:22 ] INFO cv 
+ [ 2018-02-20 04:38:22 ] INFO 10 
+ [ 2018-02-20 04:38:22 ] INFO 1 
+ [ 2018-02-20 04:38:22 ] INFO examples/wine/wine 20180220_04:38:22 
+ [ 2018-02-20 04:38:22 ] INFO INFO 
+ [ 2018-02-20 04:38:22 ] INFO ./ 
+ [ 2018-02-20 04:38:22 ] INFO FALSE 
+[ 2018-02-20 04:38:22 ] INFO Current Combination is : ( RRF mRMR ) 
+[ 2018-02-20 04:38:22 ] INFO Training model with RRF and 5 features. 
+[ 2018-02-20 04:38:28 ] INFO Training model with RRF and 10 features. 
+[ 2018-02-20 04:38:35 ] INFO Current Combination is : ( rf mRMR ) 
+[ 2018-02-20 04:38:35 ] INFO Training model with rf and 5 features. 
+[ 2018-02-20 04:38:37 ] INFO Training model with rf and 10 features. 
+[ 2018-02-20 04:38:39 ] INFO Current Combination is : ( kknn mRMR ) 
+[ 2018-02-20 04:38:39 ] INFO Training model with kknn and 5 features. 
+[ 2018-02-20 04:38:41 ] INFO Training model with kknn and 10 features. 

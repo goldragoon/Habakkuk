@@ -36,20 +36,28 @@ gfs_selector <- function(dataframe, feature_count) {
 ################### Wrapper Based Feature Selection ############################
 
 
-backward_selector <- function(dataframe, model, validator, label){
+backward_selector <- function(dataframe, feature_count, label){
     print(paste("Backward Selector Executed", model))
-    evaluator<-function(subset){
-        
-        result_ <- train(train[,subset], train[, label],metric="Accuracy",method=model,trControl=validator) 
-        return(mean(result_$results$Accuracy))
+    rfFuncs$summary <- multiClassSummary
+    rfe_ctrl <- rfeControl(functions=rfFuncs,
+                           method="repeatedcv",
+                           repeats=1,
+                           number=3,
 
-    }
-    features <- names(dataframe)
-    return(backward.search(features[features != label], evaluator))
+                           verbose=TRUE,
+                           allowParallel=TRUE)
+    
+    result <- rfe(
+                   dataframe[,!names(train) %in% c(label)],
+                   dataframe[,label],
+                   iters=2,
+                   rfeControl=rfe_ctrl,
+                   method=model)
 
+    return(result)
 }
 
-forward_selector <- function(dataframe, model, validator, label){
+forward_selector <- function(dataframe, feature_count, label){
     print(paste("Forward Selector Executed", model))
     evaluator<-function(subset){
         result_ <- train(train[,subset], train[, label],metric="Accuracy",method=model,trControl=validator)        
@@ -62,7 +70,7 @@ forward_selector <- function(dataframe, model, validator, label){
 
 }
 
-genetic_selector <- function(dataframe, model, validator, label){
+genetic_selector <- function(dataframe, feature_count, label){
     print("Genetic")    
     # customize caret GA function.
     ga_ctrl <- gafsControl(functions=caretGA,
@@ -80,16 +88,18 @@ genetic_selector <- function(dataframe, model, validator, label){
                    popSize=30,
                    gafsControl=ga_ctrl,
                    method=model)
-
-    return(result$optVariables)
+    print(result)
+    return(result)
 }
 
-simulated_selector <- function(dataframe, model, validator, label) {
+simulated_selector <- function(dataframe, feature_count, label) {
     print("Simulated Annealing") 
     sa_ctrl <- safsControl(functions=caretSA,
                            method="repeatedcv",
                            repeats=3,
                            number=5,
+
+		  	   fitness_extern=multiClassSummary,
                            verbose=TRUE,
                            allowParallel=TRUE)
     
@@ -100,7 +110,7 @@ simulated_selector <- function(dataframe, model, validator, label) {
                    safsControl=sa_ctrl,
                    method=model)
 
-    return(result$optVariables)     
+    return(result)     
 }
 
 

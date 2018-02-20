@@ -1,0 +1,18 @@
+[ 2018-02-20 04:50:12 ] INFO examples/wine/wine.data 
+ [ 2018-02-20 04:50:12 ] INFO V1 
+ [ 2018-02-20 04:50:12 ] INFO list('V1') 
+ [ 2018-02-20 04:50:12 ] INFO omit 
+ [ 2018-02-20 04:50:12 ] INFO FALSE 
+ [ 2018-02-20 04:50:12 ] INFO 2 
+ [ 2018-02-20 04:50:12 ] INFO list('mRMR') 
+ [ 2018-02-20 04:50:12 ] INFO list('rf','RRF','kknn') 
+ [ 2018-02-20 04:50:12 ] INFO roc 
+ [ 2018-02-20 04:50:12 ] INFO cv 
+ [ 2018-02-20 04:50:12 ] INFO 10 
+ [ 2018-02-20 04:50:12 ] INFO 1 
+ [ 2018-02-20 04:50:12 ] INFO examples/wine/wine 20180220_04:50:12 
+ [ 2018-02-20 04:50:12 ] INFO INFO 
+ [ 2018-02-20 04:50:12 ] INFO ./ 
+ [ 2018-02-20 04:50:12 ] INFO FALSE 
+[ 2018-02-20 04:50:12 ] INFO Current Combination is : ( RRF mRMR ) 
+[ 2018-02-20 04:50:12 ] INFO Training model with RRF and 5 features. 
